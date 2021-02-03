@@ -10,7 +10,7 @@
   "css": "lib/vue-twig-tree.css",
   "unpkg": "lib/vue-twig-tree.umd.min.js",
   "typings": "/types/index.d.ts",
-  "files": ["lib/", "src/", "types/", "LICENSE", "README.md", "package.json"],
+  "files": ["dist/", "src/", "types/", "LICENSE", "README.md", "package.json"],
   "scripts": {
     "example": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-twig-tree --dest dist src/index.ts",

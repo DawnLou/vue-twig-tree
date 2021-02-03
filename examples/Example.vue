@@ -27,8 +27,18 @@
     <section>
       <h2>Remote Load</h2>
       <p><span>data</span> {{ remote }}</p>
-      <VueTwigTreeV :data="remote" :parser="remoteLoadParser" :load-children="loadChildren" />
-      <VueTwigTreeH :data="remote" :parser="remoteLoadParser" :load-children="loadChildren" />
+      <VueTwigTreeV
+        :data="remote"
+        :parser="remoteLoadParser"
+        :load-children="loadChildren"
+      />
+      <p><span>Reload On Extend</span></p>
+      <VueTwigTreeH
+        :data="remote"
+        :parser="remoteLoadParser"
+        :load-children="loadChildren"
+        reload-on-extend
+      />
     </section>
   </div>
 </template>
