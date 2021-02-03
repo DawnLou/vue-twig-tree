@@ -1,13 +1,4 @@
 import { Vue, Prop, Watch, Component, Ref, Emit } from 'vue-property-decorator';
-
-export interface LoadChildrenCallback {
-    (children: any[] | null | undefined): void;
-}
-
-export interface LoadChildren {
-    (node: any, callback: LoadChildrenCallback): void;
-}
-
 export class Node {
     data: any | null = null;
     name: any | null = null;
@@ -17,6 +8,14 @@ export class Node {
 export interface NodeParser {
     (data: any, labelName: string): Node;
 }
+export interface LoadChildrenCallback {
+    (children: any[] | null | undefined): void;
+}
+
+export interface LoadChildren {
+    (node: Node, callback: LoadChildrenCallback): void;
+}
+
 const defaultParser: NodeParser = function (data: any, labelName: string) {
     const node = new Node();
     const name = data[labelName];
@@ -61,6 +60,12 @@ export default class Twig extends Vue {
         const copy = JSON.parse(JSON.stringify(val));
         this.node = this.parser(copy, this.labelName);
         this.unretractive = val.unretractive ? true : false;
+
+        if (this.node.children.length < 1) {
+            this.extend = false;
+            return;
+        }
+
         if (this.unretractive || this.autoExtend) {
             this.extend = true;
         } else {

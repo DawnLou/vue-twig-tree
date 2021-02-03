@@ -24,12 +24,17 @@
       <p><span>data</span> {{ custom }}</p>
       <VueTwigTreeV :data="custom.root" :parser="parser" />
     </section>
+    <section>
+      <h2>Remote Load</h2>
+      <p><span>data</span> {{ remote }}</p>
+      <VueTwigTreeH :data="remote" :parser="remoteLoadParser" :load-children="loadChildren" />
+    </section>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Node, NodeParser } from "@/components/Twig";
+import { Node, LoadChildrenCallback } from "@/components/Twig";
 import VueTwigTreeH from "@/components/VueTwigTreeH.vue";
 import VueTwigTreeV from "@/components/VueTwigTreeV.vue";
 import simple from "./mock/simple";
@@ -43,6 +48,7 @@ import custom from "./mock/custom";
 export default class Example extends Vue {
   simple = simple;
   custom = custom;
+  remote = { name: "Root" };
   parser(data: any, labelName: string): Node {
     const node = new Node();
     const name = data[labelName];
@@ -56,6 +62,22 @@ export default class Example extends Vue {
       node.hasChild = children.length > 0;
     }
     return node;
+  }
+  remoteLoadParser(data: any, labelName: string): Node {
+    const node = new Node();
+    const name = data[labelName];
+    if (name) {
+      node.name = name;
+    }
+    node.children = [];
+    node.hasChild = true;
+    return node;
+  }
+  loadChildren(node: Node, callback: LoadChildrenCallback) {
+    setTimeout(() => {
+      const children = [{ name: "child-1" }, { name: "child-2" }];
+      callback(children);
+    }, 1000);
   }
 }
 </script>
