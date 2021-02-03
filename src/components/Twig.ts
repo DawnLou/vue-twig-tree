@@ -39,6 +39,7 @@ export default class Twig extends Vue {
     @Prop({ type: Array, default: function (): any[] { return []; } }) readonly parents!: any[];
     @Prop({ type: Boolean, default: true }) readonly autoExtend!: boolean;
     @Prop(Function) readonly loadChildren!: LoadChildren | undefined;
+    @Prop({ type: Boolean, default: false }) readonly reloadOnExtend!: boolean;
     @Ref("twig") readonly twig!: HTMLElement;
     node: Node | null = null;
     extend = false;
@@ -78,12 +79,16 @@ export default class Twig extends Vue {
             this.extend = false;
             return;
         }
-        if (this.loadChildren) {
-            this.loading = true;
-            this.loadChildren(this.node, this.loadChildrenCallback);
+        if (!this.loadChildren) {
+            this.extend = true;
             return;
         }
-        this.extend = true;
+        if (!this.reloadOnExtend && this.node.children.length > 0) {
+            this.extend = true;
+            return;
+        }
+        this.loading = true;
+        this.loadChildren(this.node, this.loadChildrenCallback);
     }
     loadChildrenCallback(children: any[] | null | undefined) {
         this.loading = false;
