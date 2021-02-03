@@ -44,6 +44,8 @@ import "@/styles/styles.css";
 import "@/styles/styles.v.css";
 import { Component } from "vue-property-decorator";
 import Twig from "./Twig";
-@Component
+@Component({
+  name: "VueTwigTreeV",
+})
 export default class VueTwigTreeV extends Twig {}
 </script>

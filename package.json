@@ -1,10 +1,20 @@
 {
   "name": "vue-twig-tree",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
+  "license": "MIT",
+  "author": "DawnLou<ltmtomato@gmail.com>",
+  "keywords": ["javascript", "vue", "vuejs", "tree"],
+  "description": "A Tree View Of Vue",
+  "main": "lib/vue-twig-tree.common.js",
+  "css": "lib/vue-twig-tree.css",
+  "unpkg": "lib/vue-twig-tree.umd.min.js",
+  "typings": "/types/index.d.ts",
+  "files": ["lib/", "src/", "types/", "LICENSE", "README.md", "package.json"],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name vue-twig-tree --dest dist src/index.ts",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
