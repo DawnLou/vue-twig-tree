@@ -1,7 +1,7 @@
 {
   "name": "vue-twig-tree",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -21,8 +21,10 @@
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-typescript": "^5.0.2",
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "prettier": "^2.2.1",
     "typescript": "~3.9.3",
     "vue-template-compiler": "^2.6.11"
   }
