@@ -7,7 +7,14 @@
           <div class="node">
             <slot :node="node">{{ node.name }}</slot>
           </div>
-          <div v-if="node.hasChild" class="extend_handle" @click="onExtendHandleClick" />
+          <div v-if="node.hasChild" class="handle">
+            <template v-if="loading">
+              <slot name="loading">
+                <div class="hoop-loading" />
+              </slot>
+            </template>
+            <div v-else class="extend_handle" @click="onExtendHandleClick" />
+          </div>
         </td>
       </tr>
       <tr v-if="node.children.length > 0" v-show="extend">

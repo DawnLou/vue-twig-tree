@@ -24,11 +24,8 @@
 
 
 .twig-wrapper .hoop-loading {
-    position: absolute;
-    top: calc(50% - 10px);
-    right: 40px;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border: 2px solid #333333;
     border-bottom: #aaa 2px solid;
     border-radius: 50%;

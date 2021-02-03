@@ -7,14 +7,16 @@
     white-space: nowrap;
 }
 
-.twig-wrapper.h .extend_handle::before {
-    content: "";
+.twig-wrapper.h .handle {
     position: absolute;
-    cursor: pointer;
     top: calc(50% - 6px);
     right: 40px;
-    width: 6px;
-    height: 6px;
+}
+
+.twig-wrapper.h .extend_handle {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
     border: 2px solid;
     border-color: transparent #909399 #909399 transparent;
     transform: rotateZ(135deg);
@@ -22,11 +24,11 @@
     transition: transform ease 300ms;
 }
 
-.twig-wrapper.h .extend_handle:hover::before {
+.twig-wrapper.h .extend_handle:hover {
     border-color: transparent #409eff #409eff transparent;
 }
 
-.twig-wrapper.h .extend .extend_handle::before {
+.twig-wrapper.h .extend .extend_handle {
     transform: rotateZ(-45deg);
 }
 
@@ -34,10 +36,10 @@
     content: "";
     width: 20px;
     top: -1px;
-    bottom: calc(50% - 1px);
+    bottom: calc(50% - 5px);
     left: -25px;
     position: absolute;
-    border: 2px solid;   
+    border: 2px solid;
     border-color: transparent transparent #909399 #909399;
     border-radius: 0 0 0 6px;
     transform: translate3d(0, -2px, 0);
@@ -47,14 +49,13 @@
     content: "";
     width: 20px;
     position: absolute;
-    top: calc(50% - 1px);
+    top: calc(50% + 5px);
     bottom: -2px;
     left: -25px;
     border: 2px solid;
     border-color: #909399 transparent transparent #909399;
     border-radius: 6px 0 0 0;
     transform: translate3d(0, -2px, 0);
-    /* #dcdee2; */
 }
 
 .twig-wrapper.h .child.first::before {

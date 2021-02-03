@@ -4,14 +4,17 @@
     padding: 5px 5px 60px 5px;
 }
 
-.twig-wrapper.v .extend_handle::before {
-    content: "";
-    left: 50%;
+.twig-wrapper.v .handle {
+    left: calc(50% - 8px);
     bottom: 30px;
-    cursor: pointer;
     position: absolute;
-    width: 10px;
-    height: 10px;
+}
+
+.twig-wrapper.v .extend_handle {
+    display: block;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
     box-sizing: border-box;
     border: 2px solid;
     border-color: #909399 #909399 transparent transparent;
@@ -20,12 +23,12 @@
     transition: transform ease 300ms;
 }
 
-.twig-wrapper.v .extend_handle:hover::before {
+.twig-wrapper.v .extend_handle:hover {
     border-color: #409eff #409eff transparent transparent;
 }
 
 
-.twig-wrapper.v .extend .extend_handle::before {
+.twig-wrapper.v .extend .extend_handle {
     transform: rotateZ(-45deg);
 }
 
