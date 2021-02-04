@@ -21,7 +21,6 @@ export declare interface LoadChildren {
 
 declare class Twig extends Vue {
     data: any | null;
-    index: number | null | undefined;
     parser: NodeParser;
     labelName: string;
     parents: any[];

@@ -13,9 +13,24 @@
     <section>
       <h2>Use Slot</h2>
       <p><span>data</span> {{ simple }}</p>
-      <VueTwigTreeV :data="simple">
-        <span class="slot-node" slot-scope="{ node }">
+      <VueTwigTreeH :data="simple">
+        <span
+          class="slot-node info"
+          slot-scope="{ node, updateCurrentName }"
+          @click="changeNodeName(updateCurrentName)"
+        >
           {{ node.name }}
+          <span class="hover-prompt"> Click To Change Name </span>
+        </span>
+      </VueTwigTreeH>
+      <VueTwigTreeV :data="simple">
+        <span
+          class="slot-node danger"
+          slot-scope="{ node, removeCurrent }"
+          @click="removeNode(removeCurrent)"
+        >
+          {{ node.name }}
+          <span class="hover-prompt"> Click To Remove Node Without Root </span>
         </span>
       </VueTwigTreeV>
     </section>
@@ -83,6 +98,12 @@ export default class Example extends Vue {
       callback(children);
     }, 1000);
   }
+  changeNodeName(updater: any) {
+    updater("changed node name");
+  }
+  removeNode(remover: any) {
+    remover();
+  }
 }
 </script>
 <style scoped>
@@ -99,8 +120,26 @@ span {
   background: #0ed149;
 }
 .slot-node {
-  background: #0e9ad1;
   color: azure;
   cursor: pointer;
+  position: relative;
+}
+.slot-node.info {
+  background: #0e9ad1;
+}
+.slot-node.danger {
+  background: #f56c6c;
+}
+
+.hover-prompt {
+  white-space: nowrap;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+.slot-node:hover .hover-prompt {
+  display: inline;
 }
 </style>

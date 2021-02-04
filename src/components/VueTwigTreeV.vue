@@ -5,7 +5,16 @@
       <tr>
         <td :colspan="span" :class="{ extend: extend }">
           <div class="node">
-            <slot :node="node">{{ node.name }}</slot>
+            <slot
+              :node="node"
+              :parents="parents"
+              :add-child="addChild"
+              :remove-current="removeCurrent"
+              :update-current-name="updateCurrentName"
+              :update-current-data="updateCurrentData"
+            >
+              {{ node.name }}
+            </slot>
           </div>
           <div v-if="node.hasChild" class="handle">
             <template v-if="loading">
@@ -29,8 +38,26 @@
             :load-children="loadChildren"
             @remove-current="removeChild"
           >
-            <template slot-scope="{ node }">
-              <slot :node="node">{{ node.name }}</slot>
+            <template
+              slot-scope="{
+                node,
+                parents,
+                addChild,
+                removeCurrent,
+                updateCurrentName,
+                updateCurrentData,
+              }"
+            >
+              <slot
+                :node="node"
+                :parents="parents"
+                :add-child="addChild"
+                :remove-current="removeCurrent"
+                :update-current-name="updateCurrentName"
+                :update-current-data="updateCurrentData"
+              >
+                {{ node.name }}
+              </slot>
             </template>
           </VueTwigTreeV>
         </td>

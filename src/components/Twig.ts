@@ -110,6 +110,14 @@ export default class Twig extends Vue {
             this.extend = false;
         }
     }
+    updateCurrentData(data: any) {
+        if (!this.node || !data) return;
+        this.node.data = data;
+    }
+    updateCurrentName(name: string) {
+        if (!this.node || !name) return;
+        this.node.name = name;
+    }
     @Emit()
     removeCurrent() {
         return this.index;
