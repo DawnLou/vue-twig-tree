@@ -141,5 +141,6 @@ span {
 
 .slot-node:hover .hover-prompt {
   display: inline;
+  z-index: 1;
 }
 </style>
