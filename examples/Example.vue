@@ -46,16 +46,9 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { Node, LoadChildrenCallback } from "@/components/Twig";
-import VueTwigTreeH from "@/components/VueTwigTreeH.vue";
-import VueTwigTreeV from "@/components/VueTwigTreeV.vue";
 import simple from "./mock/simple";
 import custom from "./mock/custom";
-@Component({
-  components: {
-    VueTwigTreeH,
-    VueTwigTreeV,
-  },
-})
+@Component
 export default class Example extends Vue {
   simple = simple;
   custom = custom;

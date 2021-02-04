@@ -6,9 +6,9 @@
   "author": "DawnLou<ltmtomato@gmail.com>",
   "keywords": ["javascript", "vue", "vuejs", "tree"],
   "description": "A Tree View Of Vue",
-  "main": "lib/vue-twig-tree.common.js",
-  "css": "lib/vue-twig-tree.css",
-  "unpkg": "lib/vue-twig-tree.umd.min.js",
+  "main": "dist/vue-twig-tree.common.js",
+  "css": "dist/vue-twig-tree.css",
+  "unpkg": "dist/vue-twig-tree.umd.min.js",
   "typings": "/types/index.d.ts",
   "files": ["dist/", "src/", "types/", "LICENSE", "README.md", "package.json"],
   "scripts": {
