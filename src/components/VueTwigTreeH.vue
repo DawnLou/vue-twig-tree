@@ -25,14 +25,13 @@
             <div v-else class="extend_handle" @click="onExtendHandleClick" />
           </div>
         </td>
-        <td
-          v-if="node.children.length > 0"
-          v-show="extend"
-          :class="['child', 'first', node.children.length === 1 ? 'one' : '']"
-        >
+        <td v-if="node.children.length > 0" v-show="extend">
           <VueTwigTreeH
-            :data="node.children[0]"
-            :index="0"
+            class="child"
+            v-for="(child, i) in node.children"
+            :key="i"
+            :data="child"
+            :index="i"
             :parser="parser"
             :label-name="labelName"
             :parents="parents.concat(data)"
@@ -64,7 +63,7 @@
           </VueTwigTreeH>
         </td>
       </tr>
-      <template v-if="node.children.length > 1">
+      <!-- <template v-if="node.children.length > 1">
         <tr v-for="i in node.children.length - 1" :key="i" v-show="extend">
           <td :class="['child', i >= node.children.length - 1 ? 'last' : '']">
             <VueTwigTreeH
@@ -101,7 +100,7 @@
             </VueTwigTreeH>
           </td>
         </tr>
-      </template>
+      </template> -->
     </template>
   </table>
 </template>

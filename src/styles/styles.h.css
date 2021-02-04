@@ -32,42 +32,59 @@
     transform: rotateZ(-45deg);
 }
 
+.twig-wrapper.h .child {
+    margin-top: 3px;
+}
+
 .twig-wrapper.h .child::before {
     content: "";
     width: 20px;
-    top: -1px;
-    bottom: calc(50% - 5px);
-    left: -25px;
     position: absolute;
+    top: 50%;
+    right: 100%;
     border: 2px solid;
     border-color: transparent transparent #909399 #909399;
-    border-radius: 0 0 0 6px;
-    transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0)
 }
 
 .twig-wrapper.h .child::after {
     content: "";
-    width: 20px;
     position: absolute;
-    top: calc(50% + 5px);
-    bottom: -2px;
     left: -25px;
+    top: -5px;
+    bottom: 0;
     border: 2px solid;
+    border-color: transparent transparent transparent #909399;
+}
+
+.twig-wrapper.h .child:first-child {
+    margin-top: 0;
+}
+
+.twig-wrapper.h .child:first-child::before {
+    display: none;
+}
+
+.twig-wrapper.h .child:last-child::before {
+    display: none;
+}
+
+.twig-wrapper.h .child:first-child::after {
+    top: 50%;
+    width: 20px;
     border-color: #909399 transparent transparent #909399;
     border-radius: 6px 0 0 0;
-    transform: translate3d(0, -2px, 0);
 }
 
-.twig-wrapper.h .child.first::before {
-    border-color: transparent transparent transparent transparent;
+.twig-wrapper.h .child:last-child::after {
+    bottom: 50%;
+    width: 20px;
+    border-color: transparent transparent #909399 #909399;
+    border-radius: 0 0 0 6px;
+}
+
+.twig-wrapper.h .child:first-child.child:last-child::after {
     border-radius: 0;
-}
-
-.twig-wrapper.h .child.one::after {
-    border-color: #909399 transparent transparent transparent;
-    border-radius: 0;
-}
-
-.twig-wrapper.h .child.last::after {
-    border-color: transparent;
+    border-color: transparent transparent #909399 transparent;
+    transform: translate3d(0, -2px, 0)
 }
