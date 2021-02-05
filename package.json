@@ -13,7 +13,8 @@
   "files": ["dist/", "src/", "types/", "LICENSE", "README.md", "package.json"],
   "scripts": {
     "example": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue-twig-tree --dest dist src/index.ts",
+    "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name vue-twig-tree --dest dist src/index.ts",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

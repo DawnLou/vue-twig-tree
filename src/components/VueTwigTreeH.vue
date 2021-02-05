@@ -3,8 +3,8 @@
   <table ref="twig" class="twig-wrapper h">
     <template v-if="node">
       <tr>
-        <td :rowspan="span" :class="{ extend: extend }">
-          <div class="node">
+        <td :rowspan="span" :class="[extend ? 'twig-extend' : '']">
+          <div class="twig-node">
             <slot
               :node="node"
               :parents="parents"
@@ -16,18 +16,18 @@
               {{ node.name }}
             </slot>
           </div>
-          <div v-if="node.hasChild" class="handle">
+          <div v-if="node.hasChild" class="twig-handle">
             <template v-if="loading">
               <slot name="loading">
-                <div class="hoop-loading" />
+                <div class="twig-hoop-loading" />
               </slot>
             </template>
-            <div v-else class="extend_handle" @click="onExtendHandleClick" />
+            <div v-else class="twig-extend_handle" @click="onExtendHandleClick" />
           </div>
         </td>
         <td v-if="node.children.length > 0" v-show="extend">
           <VueTwigTreeH
-            class="child"
+            class="twig-child"
             v-for="(child, i) in node.children"
             :key="i"
             :data="child"
@@ -63,44 +63,6 @@
           </VueTwigTreeH>
         </td>
       </tr>
-      <!-- <template v-if="node.children.length > 1">
-        <tr v-for="i in node.children.length - 1" :key="i" v-show="extend">
-          <td :class="['child', i >= node.children.length - 1 ? 'last' : '']">
-            <VueTwigTreeH
-              :data="node.children[i]"
-              :index="i"
-              :parser="parser"
-              :label-name="labelName"
-              :parents="parents.concat(data)"
-              :auto-extend="autoExtend"
-              :load-children="loadChildren"
-              @remove-current="removeChild"
-            >
-              <template
-                slot-scope="{
-                  node,
-                  parents,
-                  addChild,
-                  removeCurrent,
-                  updateCurrentName,
-                  updateCurrentData,
-                }"
-              >
-                <slot
-                  :node="node"
-                  :parents="parents"
-                  :add-child="addChild"
-                  :remove-current="removeCurrent"
-                  :update-current-name="updateCurrentName"
-                  :update-current-data="updateCurrentData"
-                >
-                  {{ node.name }}
-                </slot>
-              </template>
-            </VueTwigTreeH>
-          </td>
-        </tr>
-      </template> -->
     </template>
   </table>
 </template>

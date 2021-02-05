@@ -3,8 +3,8 @@
   <table ref="twig" class="twig-wrapper v">
     <template v-if="node">
       <tr>
-        <td :colspan="span" :class="{ extend: extend }">
-          <div class="node">
+        <td :colspan="span" :class="[extend ? 'twig-extend' : '']">
+          <div class="twig-node">
             <slot
               :node="node"
               :parents="parents"
@@ -16,18 +16,18 @@
               {{ node.name }}
             </slot>
           </div>
-          <div v-if="node.hasChild" class="handle">
+          <div v-if="node.hasChild" class="twig-handle">
             <template v-if="loading">
               <slot name="loading">
-                <div class="hoop-loading" />
+                <div class="twig-hoop-loading" />
               </slot>
             </template>
-            <div v-else class="extend_handle" @click="onExtendHandleClick" />
+            <div v-else class="twig-extend_handle" @click="onExtendHandleClick" />
           </div>
         </td>
       </tr>
       <tr v-if="node.children.length > 0" v-show="extend">
-        <td v-for="(child, i) in node.children" :key="i" class="child">
+        <td v-for="(child, i) in node.children" :key="i" class="twig-child">
           <VueTwigTreeV
             :data="child"
             :index="i"

@@ -4,13 +4,13 @@
     padding: 5px 5px 60px 5px;
 }
 
-.twig-wrapper.v .handle {
+.twig-wrapper.v .twig-handle {
     left: calc(50% - 8px);
     bottom: 30px;
     position: absolute;
 }
 
-.twig-wrapper.v .extend_handle {
+.twig-wrapper.v .twig-extend_handle {
     display: block;
     cursor: pointer;
     width: 16px;
@@ -23,16 +23,16 @@
     transition: transform ease 300ms;
 }
 
-.twig-wrapper.v .extend_handle:hover {
+.twig-wrapper.v .twig-extend_handle:hover {
     border-color: #409eff #409eff transparent transparent;
 }
 
 
-.twig-wrapper.v .extend .extend_handle {
+.twig-wrapper.v .twig-extend .twig-extend_handle {
     transform: rotateZ(-45deg);
 }
 
-.twig-wrapper.v .child::before {
+.twig-wrapper.v .twig-child::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -43,7 +43,7 @@
     transform: translate3d(-2px, 0, 0)
 }
 
-.twig-wrapper.v .child::after {
+.twig-wrapper.v .twig-child::after {
     content: "";
     position: absolute;
     left: 0;
@@ -53,15 +53,15 @@
     border-color: #909399;
 }
 
-.twig-wrapper.v .child:first-child::before {
+.twig-wrapper.v .twig-child:first-child::before {
     display: none;
 }
 
-.twig-wrapper.v .child:last-child::before {
+.twig-wrapper.v .twig-child:last-child::before {
     display: none;
 }
 
-.twig-wrapper.v .child:first-child::after {
+.twig-wrapper.v .twig-child:first-child::after {
     left: 50%;
     height: 15px;
     border: 2px solid;
@@ -70,7 +70,7 @@
     transform: translate3d(2px, 0, 0)
 }
 
-.twig-wrapper.v .child:last-child::after {
+.twig-wrapper.v .twig-child:last-child::after {
     right: 50%;
     height: 15px;
     border: 2px solid;
@@ -79,7 +79,7 @@
     transform: translate3d(-2px, 0, 0)
 }
 
-.twig-wrapper.v .child:first-child.child:last-child::after {
+.twig-wrapper.v .twig-child:first-child.twig-child:last-child::after {
     left: auto;
     border-radius: 0;
     border-color: transparent #909399 transparent transparent;

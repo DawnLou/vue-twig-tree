@@ -3,17 +3,17 @@
     padding: 5px 70px 5px 5px;
 }
 
-.twig-wrapper.h .node {
+.twig-wrapper.h .twig-node {
     white-space: nowrap;
 }
 
-.twig-wrapper.h .handle {
+.twig-wrapper.h .twig-handle {
     position: absolute;
     top: calc(50% - 6px);
     right: 40px;
 }
 
-.twig-wrapper.h .extend_handle {
+.twig-wrapper.h .twig-extend_handle {
     cursor: pointer;
     width: 12px;
     height: 12px;
@@ -24,19 +24,19 @@
     transition: transform ease 300ms;
 }
 
-.twig-wrapper.h .extend_handle:hover {
+.twig-wrapper.h .twig-extend_handle:hover {
     border-color: transparent #409eff #409eff transparent;
 }
 
-.twig-wrapper.h .extend .extend_handle {
+.twig-wrapper.h .twig-extend .twig-extend_handle {
     transform: rotateZ(-45deg);
 }
 
-.twig-wrapper.h .child {
+.twig-wrapper.h .twig-child {
     margin-top: 3px;
 }
 
-.twig-wrapper.h .child::before {
+.twig-wrapper.h .twig-child::before {
     content: "";
     width: 20px;
     position: absolute;
@@ -47,43 +47,43 @@
     transform: translate3d(0, -2px, 0)
 }
 
-.twig-wrapper.h .child::after {
+.twig-wrapper.h .twig-child::after {
     content: "";
     position: absolute;
     left: -25px;
     top: -5px;
-    bottom: 0;
+    bottom: -4px;
     border: 2px solid;
     border-color: transparent transparent transparent #909399;
 }
 
-.twig-wrapper.h .child:first-child {
+.twig-wrapper.h .twig-child:first-child {
     margin-top: 0;
 }
 
-.twig-wrapper.h .child:first-child::before {
+.twig-wrapper.h .twig-child:first-child::before {
     display: none;
 }
 
-.twig-wrapper.h .child:last-child::before {
+.twig-wrapper.h .twig-child:last-child::before {
     display: none;
 }
 
-.twig-wrapper.h .child:first-child::after {
+.twig-wrapper.h .twig-child:first-child::after {
     top: 50%;
     width: 20px;
     border-color: #909399 transparent transparent #909399;
     border-radius: 6px 0 0 0;
 }
 
-.twig-wrapper.h .child:last-child::after {
+.twig-wrapper.h .twig-child:last-child::after {
     bottom: 50%;
     width: 20px;
     border-color: transparent transparent #909399 #909399;
     border-radius: 0 0 0 6px;
 }
 
-.twig-wrapper.h .child:first-child.child:last-child::after {
+.twig-wrapper.h .twig-child:first-child.twig-child:last-child::after {
     border-radius: 0;
     border-color: transparent transparent #909399 transparent;
     transform: translate3d(0, -2px, 0)
