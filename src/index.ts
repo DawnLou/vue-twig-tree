@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import VueTwigTreeH from "@/components/VueTwigTreeH.vue"
-import VueTwigTreeV from "@/components/VueTwigTreeV.vue"
+import VueTwigTreeH from "./components/VueTwigTreeH.vue"
+import VueTwigTreeV from "./components/VueTwigTreeV.vue"
 
 const VueTwigTree = {
     install(vue: typeof Vue): void {

@@ -1,20 +1,31 @@
 {
   "name": "vue-twig-tree",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "private": false,
   "license": "MIT",
   "author": "DawnLou<ltmtomato@gmail.com>",
-  "keywords": ["javascript", "vue", "vuejs", "tree"],
+  "keywords": [
+    "javascript",
+    "vue",
+    "vuejs",
+    "tree"
+  ],
   "description": "A Tree View Of Vue",
-  "main": "dist/vue-twig-tree.common.js",
-  "css": "dist/vue-twig-tree.css",
-  "unpkg": "dist/vue-twig-tree.umd.min.js",
-  "typings": "/types/index.d.ts",
-  "files": ["dist/", "src/", "types/", "LICENSE", "README.md", "package.json"],
+  "main": "dist/index.common.js",
+  "unpkg": "dist/index.umd.js",
+  "typings": "types/index.d.ts",
+  "files": [
+    "dist/",
+    "types/",
+    "src/",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
     "example": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name vue-twig-tree --dest dist src/index.ts",
+    "build:lib": "vue-cli-service build --target lib --name index --dest dist src/index.ts",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -35,6 +46,14 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "prettier": "^2.2.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "rollup-plugin-vue2": "^0.8.1",
     "typescript": "~3.9.3",
     "vue-template-compiler": "^2.6.11"
   }

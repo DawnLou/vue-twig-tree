@@ -1,4 +1,3 @@
-<!--  -->
 <template>
   <table ref="twig" class="twig-wrapper v">
     <template v-if="node">
