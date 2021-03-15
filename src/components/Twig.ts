@@ -22,6 +22,7 @@ const defaultParser: NodeParser = function (data: any, labelName: string) {
     if (name) {
         node.name = name;
     }
+    node.data = data;
     const children = data.children;
     if (children && children instanceof Array) {
         node.children = children;
